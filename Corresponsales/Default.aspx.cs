@@ -20,40 +20,70 @@ public partial class _Default : Page
         if (!IsPostBack)
         {
 
-            // Specify the data source and field names for the Text 
-            // and Value properties of the items (ListItem objects) 
-            // in the DropDownList control.
-            corresponsales.DataSource = CreateDataSource();
-            corresponsales.DataTextField = "COR_NOMBRE - counts";
-            corresponsales.DataValueField = "COR_NOMBRE";
-
-            // Bind the data to the control.
-            corresponsales.DataBind();
-
-            // Set the default selected item, if desired.
-            corresponsales.SelectedIndex = 0;
+            ListarCorresponsales();
+            ConsultarOficinas(corresponsales.DataValueField);
 
         }
 
     }
 
-    ICollection CreateDataSource()
+
+    private void ListarCorresponsales()
     {
-        string selectQuery = @"EXEC ListarCorresponsales";
-        DataTable dt = new DataTable();
-        using (SqlConnection con = new SqlConnection("Server=DESKTOP-H962VE2;Initial;Integrated Security=SSPI;Database=cmmoneycash;"))
+        SqlConnection conexion = new SqlConnection("Server=DESKTOP-H962VE2;Initial;Integrated Security=SSPI;Database=cmmoneycash;");
+        try
         {
-            using (SqlCommand cmd = new SqlCommand(selectQuery, con))
-            {
-                cmd.CommandType = CommandType.Text;
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                {
-                    sda.Fill(dt);
-                }
-            }
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "EXEC ListarCorresponsales";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conexion;
+            conexion.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            corresponsales.DataSource = dt;
+            corresponsales.DataBind();
+            corresponsales.DataTextField = "COR_NOMBRE - counts";
+            corresponsales.DataValueField = "COR_NOMBRE";
+            conexion.Close();
         }
-        DataView dv = new DataView(dt);
-        return dv;
+        catch(Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            conexion.Close();
+        }
+    }
+
+    private void ConsultarOficinas(string corNombre)
+    {
+        SqlConnection conexion = new SqlConnection("Server=DESKTOP-H962VE2;Initial;Integrated Security=SSPI;Database=cmmoneycash;");
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "EXEC MostrarInicialesOficina";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conexion;
+            conexion.Open();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            oficinas.DataSource = dt;
+            oficinas.DataBind();
+            conexion.Close();
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            conexion.Close();
+        }
+
     }
 
 

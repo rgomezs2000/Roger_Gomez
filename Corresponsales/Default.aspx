@@ -15,10 +15,17 @@
             </asp:DropDownList>
         </div>
     </div>
+    <br />
     <div class="row">
         <div class="col-md-12 table-responsive">
-            <asp:Table runat="server" CssClass="table-striped">
-            </asp:Table>
+            <h3>OFICINAS</h3>
+            <br />
+            <asp:GridView ID="oficinas" runat="server" CssClass="table-striped">
+                <Columns>
+                    <asp:BoundField DataField="inicial" HeaderText="INICIAL" />
+                    <asp:BoundField DataField="repetidos" HeaderText="CARACTERES REPETIDOS" />
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
 </asp:Content>
