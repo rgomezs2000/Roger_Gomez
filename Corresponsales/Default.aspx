@@ -15,4 +15,10 @@
             </asp:DropDownList>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12 table-responsive">
+            <asp:Table runat="server" CssClass="table-striped">
+            </asp:Table>
+        </div>
+    </div>
 </asp:Content>
