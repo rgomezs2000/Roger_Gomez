@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f3f28044-7a36-4db6-ab43-109054073939" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63784/ConexionBaseDatos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConexionBaseDatos.wsdl" MetadataType="Wsdl" ID="a24b07aa-ad93-41ad-a17c-bc32e5cae6ea" SourceId="1" SourceUrl="http://localhost:63784/ConexionBaseDatos.svc?wsdl" />
+    <MetadataFile FileName="ConexionBaseDatos.xsd" MetadataType="Schema" ID="713f42e1-c465-4e3a-a33a-b20db5460ab6" SourceId="1" SourceUrl="http://localhost:63784/ConexionBaseDatos.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConexionBaseDatos1.xsd" MetadataType="Schema" ID="030d6f63-ebe4-42d4-b3bb-e647b48fd775" SourceId="1" SourceUrl="http://localhost:63784/ConexionBaseDatos.svc?xsd=xsd0" />
+    <MetadataFile FileName="ConexionBaseDatos2.xsd" MetadataType="Schema" ID="eb73648c-48a9-4755-9c24-83486427a20e" SourceId="1" SourceUrl="http://localhost:63784/ConexionBaseDatos.svc?xsd=xsd1" />
+    <MetadataFile FileName="ConexionBaseDatos.disco" MetadataType="Disco" ID="2e72fd7e-9d73-4788-a06f-e54582261897" SourceId="1" SourceUrl="http://localhost:63784/ConexionBaseDatos.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

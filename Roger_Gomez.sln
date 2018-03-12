@@ -24,6 +24,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Corresponsales", "Correspon
 		SlnRelativePath = "Corresponsales\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{D84A225C-2A8E-4957-A390-93F6D03443C1} = {D84A225C-2A8E-4957-A390-93F6D03443C1}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ConexionBaseDatos(1)", "ConexionBaseDatos\", "{D84A225C-2A8E-4957-A390-93F6D03443C1}"
 	ProjectSection(WebsiteProperties) = preProject
